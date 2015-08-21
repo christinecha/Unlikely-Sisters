@@ -1,0 +1,33 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  bead1: MyString
+  bead2: MyString
+  bead3: MyString
+  string: MyString
+  bead4: MyString
+  bead5: MyString
+  bead6: MyString
+  bead7: MyString
+  bead8: MyString
+  bead9: MyString
+  rope: MyString
+  clasp: MyString
+  length: MyString
+  price: 
+
+two:
+  bead1: MyString
+  bead2: MyString
+  bead3: MyString
+  string: MyString
+  bead4: MyString
+  bead5: MyString
+  bead6: MyString
+  bead7: MyString
+  bead8: MyString
+  bead9: MyString
+  rope: MyString
+  clasp: MyString
+  length: MyString
+  price: 

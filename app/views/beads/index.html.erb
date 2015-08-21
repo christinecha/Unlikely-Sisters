@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Beads</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Image</th>
+      <th>Description</th>
+      <th>Shape</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @beads.each do |bead| %>
+      <tr>
+        <td><%= bead.title %></td>
+        <td><%= bead.image %></td>
+        <td><%= bead.description %></td>
+        <td><%= bead.shape %></td>
+        <td><%= link_to 'Show', bead %></td>
+        <td><%= link_to 'Edit', edit_bead_path(bead) %></td>
+        <td><%= link_to 'Destroy', bead, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Bead', new_bead_path %>

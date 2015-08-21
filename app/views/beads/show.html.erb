@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @bead.title %>
+</p>
+
+<p>
+  <strong>Image:</strong>
+  <%= @bead.image %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @bead.description %>
+</p>
+
+<p>
+  <strong>Shape:</strong>
+  <%= @bead.shape %>
+</p>
+
+<%= link_to 'Edit', edit_bead_path(@bead) %> |
+<%= link_to 'Back', beads_path %>
