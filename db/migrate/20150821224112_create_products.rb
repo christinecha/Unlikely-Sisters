@@ -1,10 +1,12 @@
-class CreateNecklaces < ActiveRecord::Migration
+class CreateProducts < ActiveRecord::Migration
   def change
-    create_table :necklaces do |t|
+    create_table :products do |t|
+      t.string :name
+      t.text :description
+      t.string :image
       t.string :bead1
       t.string :bead2
       t.string :bead3
-      t.string :string
       t.string :bead4
       t.string :bead5
       t.string :bead6
@@ -14,7 +16,8 @@ class CreateNecklaces < ActiveRecord::Migration
       t.string :rope
       t.string :clasp
       t.string :length
-      t.money :price
+      t.decimal :price, precision: 10, scale: 2
+      t.boolean :active
 
       t.timestamps null: false
     end

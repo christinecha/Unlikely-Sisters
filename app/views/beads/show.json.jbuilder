@@ -1,1 +1,1 @@
-json.extract! @bead, :id, :title, :image, :description, :shape, :created_at, :updated_at
+json.extract! @bead, :id, :name, :image, :description, :shape, :created_at, :updated_at

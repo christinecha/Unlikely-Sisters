@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class NecklaceTest < ActiveSupport::TestCase
+class productTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end
