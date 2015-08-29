@@ -7,7 +7,6 @@ class ProductsController < ApplicationController
     @products = Product.all
     @order_item = current_order.order_items.new
   end
-
   # GET /products/1
   # GET /products/1.json
   def show
@@ -16,7 +15,6 @@ class ProductsController < ApplicationController
   # GET /products/new
   def new
     @product = Product.new
-    @beads = Bead.all
   end
 
   # GET /products/1/edit
@@ -71,6 +69,6 @@ class ProductsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def product_params
-      params.require(:product).permit(:title, :description, :image, :bead1, :bead2, :bead3, :string, :bead4, :bead5, :bead6, :bead7, :bead8, :bead9, :rope, :clasp, :length, :price)
+      params.require(:product).permit(:name, :bead1, :bead2, :bead3, :bead4, :bead5, :bead6, :bead7, :bead8, :bead9, :strand, :length, :price)
     end
 end

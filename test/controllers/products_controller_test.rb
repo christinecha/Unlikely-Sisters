@@ -18,7 +18,7 @@ class productsControllerTest < ActionController::TestCase
 
   test "should create product" do
     assert_difference('product.count') do
-      post :create, product: { bead1: @product.bead1, bead2: @product.bead2, bead3: @product.bead3, bead4: @product.bead4, bead5: @product.bead5, bead6: @product.bead6, bead7: @product.bead7, bead8: @product.bead8, bead9: @product.bead9, clasp: @product.clasp, length: @product.length, price: @product.price, rope: @product.rope, string: @product.string }
+      post :create, product: { bead1: @product.bead1, bead2: @product.bead2, bead3: @product.bead3, bead4: @product.bead4, bead5: @product.bead5, bead6: @product.bead6, bead7: @product.bead7, bead8: @product.bead8, bead9: @product.bead9, clasp: @product.clasp, length: @product.length, price: @product.price, strand: @product.strand, string: @product.string }
     end
 
     assert_redirected_to product_path(assigns(:product))
@@ -35,7 +35,7 @@ class productsControllerTest < ActionController::TestCase
   end
 
   test "should update product" do
-    patch :update, id: @product, product: { bead1: @product.bead1, bead2: @product.bead2, bead3: @product.bead3, bead4: @product.bead4, bead5: @product.bead5, bead6: @product.bead6, bead7: @product.bead7, bead8: @product.bead8, bead9: @product.bead9, clasp: @product.clasp, length: @product.length, price: @product.price, rope: @product.rope, string: @product.string }
+    patch :update, id: @product, product: { bead1: @product.bead1, bead2: @product.bead2, bead3: @product.bead3, bead4: @product.bead4, bead5: @product.bead5, bead6: @product.bead6, bead7: @product.bead7, bead8: @product.bead8, bead9: @product.bead9, clasp: @product.clasp, length: @product.length, price: @product.price, strand: @product.strand, string: @product.string }
     assert_redirected_to product_path(assigns(:product))
   end
 

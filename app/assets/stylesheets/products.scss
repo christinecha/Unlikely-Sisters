@@ -1,3 +1,11 @@
-// Place all the styles related to the products controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.necklace-view {
+  background-image: url('editor/strand3.png');
+  background-repeat: repeat-x;
+  background-position: center;
+  text-align: center;
+}
+
+.bead {
+  height: 100px; 
+  display: inline-block;
+}

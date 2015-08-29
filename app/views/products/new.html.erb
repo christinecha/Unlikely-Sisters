@@ -1,47 +1,12 @@
-<div class="designtool">
+<h1>New Product</h1>
 
-  <h1>New product</h1>
-
-  <!-- <%= render 'form' %> -->
-
-  <div class="container-fluid" id="strand">
-    <div class="bead-area">
-      <div class="bead-block">
-        <%= image_tag 'editor/bead-01.png', id: "bead1" %>
-      </div>
-      <div class="bead-block">
-        <%= image_tag 'editor/bead-01.png', id: "bead2" %>
-      </div>
-      <div class="bead-block">
-        <%= image_tag 'editor/bead-01.png', id: "bead3" %>
-      </div>
-      <div class="bead-block">
-        <%= image_tag 'editor/bead-01.png', id: "bead4" %>
-      </div>
-      <div class="bead-block">
-        <%= image_tag 'editor/bead-01.png', id: "bead5" %>
-      </div>
-      <div class="bead-block">
-        <%= image_tag 'editor/bead-01.png', id: "bead6" %>
-      </div>
-      <div class="bead-block">
-        <%= image_tag 'editor/bead-01.png', id: "bead7" %>
-      </div>
-    </div>
-
-    <%= render 'bead_customizer' %>
-
+<div class="container-fluid necklace-view">
+  <div class="beads">
+    <%= image_tag "editor/beads/square_white_solid.png", id: "bead1", class: "bead" %>
+    <%= image_tag "editor/beads/square_white_sprinkles.png", id: "bead2", class: "bead" %>
   </div>
-  <div class="container-fluid" id="beads">
-    <h2>choose your beads</h2>
-
-  </div>
-
-    <%= form_for(@product) do |f| %>
-
-    <% end %>
-  </div>
-
-  <%= link_to 'Back', products_path %>
-
 </div>
+
+<%= render 'form' %>
+
+<%= link_to 'Back', products_path %>

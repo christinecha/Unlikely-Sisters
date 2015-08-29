@@ -16,21 +16,12 @@ ActiveRecord::Schema.define(version: 20150822001430) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "beads", force: :cascade do |t|
-    t.string   "name"
-    t.string   "image"
-    t.text     "description"
-    t.string   "shape"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-  end
-
   create_table "order_items", force: :cascade do |t|
     t.integer  "product_id"
     t.integer  "order_id"
-    t.decimal  "unit_price",  precision: 12, scale: 3
+    t.decimal  "unit_price",  precision: 12, scale: 2
     t.integer  "quantity"
-    t.decimal  "total_price", precision: 12, scale: 3
+    t.decimal  "total_price", precision: 12, scale: 2
     t.datetime "created_at",                           null: false
     t.datetime "updated_at",                           null: false
   end
@@ -45,10 +36,10 @@ ActiveRecord::Schema.define(version: 20150822001430) do
   end
 
   create_table "orders", force: :cascade do |t|
-    t.decimal  "subtotal",        precision: 12, scale: 3
-    t.decimal  "tax",             precision: 12, scale: 3
-    t.decimal  "shipping",        precision: 12, scale: 3
-    t.decimal  "total",           precision: 12, scale: 3
+    t.decimal  "subtotal",        precision: 12, scale: 2
+    t.decimal  "tax",             precision: 12, scale: 2
+    t.decimal  "shipping",        precision: 12, scale: 2
+    t.decimal  "total",           precision: 12, scale: 2
     t.integer  "order_status_id"
     t.datetime "created_at",                               null: false
     t.datetime "updated_at",                               null: false
@@ -58,25 +49,21 @@ ActiveRecord::Schema.define(version: 20150822001430) do
 
   create_table "products", force: :cascade do |t|
     t.string   "name"
-    t.text     "description"
-    t.string   "image"
     t.string   "bead1"
     t.string   "bead2"
     t.string   "bead3"
-    t.string   "string"
     t.string   "bead4"
     t.string   "bead5"
     t.string   "bead6"
     t.string   "bead7"
     t.string   "bead8"
     t.string   "bead9"
-    t.string   "rope"
-    t.string   "clasp"
-    t.string   "length"
-    t.decimal  "price",       precision: 12, scale: 3
+    t.string   "strand"
+    t.integer  "length"
+    t.decimal  "price",      precision: 10, scale: 2
     t.boolean  "active"
-    t.datetime "created_at",                           null: false
-    t.datetime "updated_at",                           null: false
+    t.datetime "created_at",                          null: false
+    t.datetime "updated_at",                          null: false
   end
 
   create_table "users", force: :cascade do |t|

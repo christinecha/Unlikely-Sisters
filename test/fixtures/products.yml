@@ -11,7 +11,7 @@ one:
   bead7: MyString
   bead8: MyString
   bead9: MyString
-  rope: MyString
+  strand: MyString
   clasp: MyString
   length: MyString
   price: 
@@ -27,7 +27,7 @@ two:
   bead7: MyString
   bead8: MyString
   bead9: MyString
-  rope: MyString
+  strand: MyString
   clasp: MyString
   length: MyString
   price: 

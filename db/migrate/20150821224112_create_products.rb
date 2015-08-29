@@ -2,8 +2,6 @@ class CreateProducts < ActiveRecord::Migration
   def change
     create_table :products do |t|
       t.string :name
-      t.text :description
-      t.string :image
       t.string :bead1
       t.string :bead2
       t.string :bead3
@@ -13,9 +11,8 @@ class CreateProducts < ActiveRecord::Migration
       t.string :bead7
       t.string :bead8
       t.string :bead9
-      t.string :rope
-      t.string :clasp
-      t.string :length
+      t.string :strand
+      t.integer :length
       t.decimal :price, precision: 10, scale: 2
       t.boolean :active
 
