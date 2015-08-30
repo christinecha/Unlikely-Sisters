@@ -1,3 +1,9 @@
+*:focus {
+  border: none;
+  box-shadow: none;
+  outline: none;
+}
+
 body {
   font-family: 'Quicksand', sans-serif;
   height: 1000px;

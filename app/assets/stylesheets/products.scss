@@ -1,16 +1,46 @@
-.necklace-view {
-  background-image: url('editor/strand3.png');
-  background-repeat: repeat-x;
-  background-position: center;
+.designtool {
   text-align: center;
-  min-width: 1000px;
-}
+  .necklaceNamer {
+    padding: 10px;
+    font-size: 30px;
+    text-align: center;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #eee;
+  }
 
-.beadpicker {
-  display: none;
-}
+  .pricetag {
+    border: none;
+    font-weight: bold;
+    font-size: 16px;
+    text-align: center;
+    #product_price {
+      border: none;
+      max-width: 20px;
+    }
+  }
 
-.bead {
-  height: 80px;
-  display: inline-block;
+  .necklace-view {
+    background-image: url('editor/strand3.png');
+    background-repeat: repeat-x;
+    background-position: center;
+    text-align: center;
+    overflow: scroll;
+  }
+
+  .beadpicker {
+    display: none;
+    text-align: left;
+    .beadOptions {
+      text-align: center;
+      width: 200px;
+    }
+  }
+
+  .beads { min-width: 1000px; margin: 50px 0; }
+
+  .bead {
+    height: 80px;
+    display: inline-block;
+  }
 }

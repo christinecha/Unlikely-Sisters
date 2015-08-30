@@ -11,6 +11,7 @@ $(document).ready(function(){
     $('#product_price').val(totalprice);
   };
 
+  $("#product_price").prop("readonly", true);
   calculatePrice();
 
   // CHOOSING BEADS
@@ -23,8 +24,7 @@ $(document).ready(function(){
 
   $('.bead').click(function(){
     var beadPosition = $(this).offset();
-    console.log(beadPosition.left);
-    $('.beadpicker').css('margin-left', (beadPosition.left + 'px'));
+    $('.beadpicker').css('margin-left', (beadPosition.left - 50) + 'px');
     $('.beadpicker').show();
     beadNumber = $(this).attr('id').slice(-1);
     beadImageId = '#bead' + beadNumber;
@@ -59,14 +59,16 @@ $(document).ready(function(){
     beads[beadNumber].size = beadSize;
     beadShape = beads[beadNumber].shape;
     beadPattern = beads[beadNumber].pattern;
-    calculatePrice();
     beadRequest();
   });
 
   $('.removeBead').click(function(){
     $(beadImageId).hide();
     $(beadInputId).val('removed');
+    beads[beadNumber].size = 0;
     $('.beadGraveyard').append('<button class="addBead" value=' + beadNumber + '>Add back Bead ' + beadNumber + '</button>');
+    $('.beadpicker').hide();
+    beadRequest();
   });
 
   $('.beadGraveyard').on('click', '.addBead', function(){
@@ -75,7 +77,9 @@ $(document).ready(function(){
     $(this).remove();
     beadImageId = '#bead' + beadNumber;
     beadInputId = '#product_bead' + beadNumber;
+    beads[beadNumber].size = 2;
     $(beadImageId).show();
+    $('.beadpicker').show();
     beadRequest();
   });
 
@@ -95,6 +99,7 @@ $(document).ready(function(){
       $(beadImageId).css('height', 60);
     };
     $(beadInputId).val(beadRequest);
+    calculatePrice();
   };
 
   // CHOOSING THE STRAND

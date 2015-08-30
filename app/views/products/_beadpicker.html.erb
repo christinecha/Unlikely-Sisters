@@ -1,14 +1,17 @@
-<p>Shape</p>
-<select class="shapePicker">
-  <%= options_for_select([["square"], "donut"]) %>
-</select>
-<p>Pattern</p>
-<select class="patternPicker">
-  <%= options_for_select([["solid"], "sprinkles"]) %>
-</select>
-<p>Size</p>
-<select class="sizePicker">
-  <%= options_for_select([["small", 1], ["medium", 2], ["large", 3]]) %>
-</select>
-<br>
-<p class="removeBead">Remove Bead</p>
+<div class="beadOptions">
+  <h1 class="selectedBead">Bead 1</h1>
+  <p>Shape</p>
+  <select class="shapePicker">
+    <%= options_for_select([["square"], "donut"]) %>
+  </select>
+  <p>Pattern</p>
+  <select class="patternPicker">
+    <%= options_for_select([["solid"], "sprinkles"]) %>
+  </select>
+  <p>Size</p>
+  <select class="sizePicker">
+    <%= options_for_select([["small", 1], ["medium", 2], ["large", 3]]) %>
+  </select>
+  <br>
+  <p class="removeBead">Remove Bead</p>
+</div>
