@@ -16,6 +16,10 @@
     <%= f.label :name %><br>
     <%= f.text_field :name %>
   </div>
+
+  <div class="beadPicker">
+  </div>
+
   <div class="field">
     <%= f.label :bead1 %><br>
     <%= f.text_field :bead1, style: "display:none;"%><br>
@@ -27,6 +31,8 @@
     <select id="patternPicker">
       <%= options_for_select([["solid"], "sprinkles"]) %>
     </select>
+    <br>
+    <input type="checkbox" name="hide" value="hidden" id="beadToggle">Remove Bead<br>
   </div>
   <div class="field">
     <%= f.label :bead2 %><br>

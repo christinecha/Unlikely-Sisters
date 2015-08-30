@@ -3,9 +3,14 @@
   background-repeat: repeat-x;
   background-position: center;
   text-align: center;
+  min-width: 1000px;
+}
+
+.beadpicker {
+  display: none;
 }
 
 .bead {
-  height: 100px; 
+  height: 80px;
   display: inline-block;
 }
