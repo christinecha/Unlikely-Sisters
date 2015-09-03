@@ -1,13 +1,42 @@
 .designtool {
   text-align: center;
-  .necklaceNamer {
-    padding: 10px;
-    font-size: 30px;
-    text-align: center;
-    border-radius: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #eee;
+
+  .banner {
+    height: 200px;
+    background-image: url('textures/arrows-01.png');
+    background-position: center;
+    background-color: #ffdcd7;
+    h1 { color: #fff; font-size: 70px; margin-top: 20px; }
+    input, select {
+      height: 50px;
+      padding: 0 20px;
+      border: none;
+      box-shadow: none;
+      font-size: 16px;
+    }
+    select {
+      -webkit-appearance: none;
+      -webkit-border-radius: 0px;
+      background-color: #fff;
+    }
+    input:focus, select:focus {
+      border: 3px solid black;
+    }
   }
+
+
+
+  .necklaceNamer {
+    text-align: center;
+    background-color: #fff;
+  }
+
+  .save-button {
+    background-color: black;
+    color: #fff;
+  }
+
+  .save-button:hover { background-color: #ff789b; }
 
   .pricetag {
     border: none;

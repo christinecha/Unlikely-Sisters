@@ -9,6 +9,8 @@ $(document).ready(function(){
     };
     totalprice+= strandprice;
     $('#product_price').val(totalprice);
+    $('.priceDisplay').val('TOTAL PRICE: $' + totalprice + '.00');
+    console.log(totalprice);
   };
 
   // CHOOSING BEADS & STRANDS

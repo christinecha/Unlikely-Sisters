@@ -1,16 +1,21 @@
+
+
 <div class="designtool">
   <%= form_for(@product) do |f| %>
-  <%= f.text_field :name, placeholder: "My Awesome Necklace", class: "necklaceNamer" %>
+  <div class="row banner">
+    <h1><span class="sniglet">beAd</span><span class="waiting-for-the-sunrise">StAtiON</span></h1>
+    <%= f.text_field :name, placeholder: "name it, yo", class: "necklaceNamer" %>
+    <select class="strandPicker custom-dropdown">
+      <%= options_for_select([["STRAND", " "], "black & white", "black"]) %>
+    </select>
+    <select class="lengthPicker custom-dropdown">
+      <%= options_for_select([["LENGTH", 0], ["55cm", 0], ["80cm", 2]]) %>
+    </select>
+    <input type="text" readonly="true" class="priceDisplay">
+    <%= f.submit 'ADD TO CART', class: "save-button" %>
+  </div>
   <br>
-  <p>Your Strand: </p>
-  <select class="strandPicker">
-    <%= options_for_select([["black & white"], "black"]) %>
-  </select>
-  <select class="lengthPicker">
-    <%= options_for_select([["55cm", 0], ["80cm", 2]]) %>
-  </select>
-  <h3 class="pricetag">Total Price: $<%= f.text_field :price %></h3>
-  <%= f.submit 'SAVE', class: "btn2" %>
+
   <div class="container-fluid necklace-view">
     <div class="beads">
       <%= image_tag "editor/beads/square_white_solid.png", id: "bead1", class: "bead" %>
@@ -37,6 +42,7 @@
     <%= f.hidden_field :bead8, style: "display:none;", value: "square_white_solid" %><br>
     <%= f.hidden_field :bead9, style: "display:none;", value: "square_white_solid" %><br>
     <%= f.hidden_field :strand, style: "display:none;", value: "black & white" %><br>
+    <%= f.hidden_field :price %>
   </div>
 
 
