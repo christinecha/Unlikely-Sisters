@@ -1,39 +1,74 @@
-<p id="notice"><%= notice %></p>
+<div class="homepage">
 
-<h1>Listing Products</h1>
-
-<div class="row">
-  <div class="col-xs-6 col-xs-offset-3">
-    <% @products.each do |product| %>
-      <%= render "product_row", product: product, order_item: @order_item %>
-    <% end %>
+  <div class="row splash">
+    <div class="text-block">
+      <%= image_tag('logos/michaka.png') %>
+      <h1>classic. <span class="sniglet">funky. </span><span class="waiting-for-the-sunrise">HANDMADE.</span></h1>
+      <br>
+      <%= image_tag 'graphics/blink_left.gif', class: 'blinkers' %>
+      <%= button_to "BEAD IT", new_product_path, class: "bead-it-btn", method: :get  %>
+      <%= image_tag 'graphics/blink_right.gif', class: 'blinkers' %>
+    </div>
   </div>
+
+  <div class="row featured-designs">
+    <h1><span class="sniglet">we </span><%= image_tag('graphics/heart_100x100.gif') %><span class="waiting-for-the-sunrise">these</span></h1>
+    <h3>&#35;michaka</h3>
+    <div class="col-md-4">
+      <%= image_tag('editor/test.jpg') %>
+      <div class="caption">
+        <h4>Featured Product</h4>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <%= image_tag('editor/test.jpg') %>
+      <div class="caption">
+        <h4>Featured Product</h4>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <%= image_tag('editor/test.jpg') %>
+      <div class="caption">
+        <h4>Featured Product</h4>
+      </div>
+    </div>
+  </div>
+
+  <h1>Listing Products</h1>
+
+  <div class="row">
+    <div class="col-xs-6 col-xs-offset-3">
+      <% @products.each do |product| %>
+        <%= render "product_row", product: product, order_item: @order_item %>
+      <% end %>
+    </div>
+  </div>
+
+    <tbody>
+      <% @products.each do |product| %>
+        <tr>
+          <td><%= product.name %></td>
+          <td><%= product.bead1 %></td>
+          <td><%= product.bead2 %></td>
+          <td><%= product.bead3 %></td>
+          <td><%= product.bead4 %></td>
+          <td><%= product.bead5 %></td>
+          <td><%= product.bead6 %></td>
+          <td><%= product.bead7 %></td>
+          <td><%= product.bead8 %></td>
+          <td><%= product.bead9 %></td>
+          <td><%= product.strand %></td>
+          <td><%= product.length %></td>
+          <td><%= product.price %></td>
+          <td><%= link_to 'Show', product %></td>
+          <td><%= link_to 'Edit', edit_product_path(product) %></td>
+          <td><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+  <br>
+
+  <%= link_to 'New Product', new_product_path %>
 </div>
-
-  <tbody>
-    <% @products.each do |product| %>
-      <tr>
-        <td><%= product.name %></td>
-        <td><%= product.bead1 %></td>
-        <td><%= product.bead2 %></td>
-        <td><%= product.bead3 %></td>
-        <td><%= product.bead4 %></td>
-        <td><%= product.bead5 %></td>
-        <td><%= product.bead6 %></td>
-        <td><%= product.bead7 %></td>
-        <td><%= product.bead8 %></td>
-        <td><%= product.bead9 %></td>
-        <td><%= product.strand %></td>
-        <td><%= product.length %></td>
-        <td><%= product.price %></td>
-        <td><%= link_to 'Show', product %></td>
-        <td><%= link_to 'Edit', edit_product_path(product) %></td>
-        <td><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Product', new_product_path %>

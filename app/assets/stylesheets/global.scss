@@ -6,9 +6,30 @@
 
 body {
   font-family: 'Quicksand', sans-serif;
-  height: 1000px;
 }
 
 img { max-width: 100%; }
 
-.container { margin: 0; padding: 0; width: 100%; }
+.container-fluid { padding: 0; margin: 0; }
+.bead-it-btn {
+  border: none;
+  font-size: 20px;
+  font-family: 'Playfair Display', serif;
+  letter-spacing: .1em;
+  background-color: white;
+}
+
+.bead-it-btn:hover {
+  font-family: 'sniglet', sans-serif;
+  font-weight: 800;
+  font-size:25px;
+}
+
+.sniglet {
+  font-family: 'Sniglet', sans-serif;
+  font-weight: 800;
+}
+
+.waiting-for-the-sunrise {
+  font-family: 'Waiting for the Sunrise', cursive;
+}

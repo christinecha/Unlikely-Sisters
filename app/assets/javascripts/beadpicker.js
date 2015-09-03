@@ -3,7 +3,7 @@ $(document).ready(function(){
   // SETTING THE PRICE
   var calculatePrice = function(){
     var totalprice = 0;
-    var strandprice = 8;
+    var strandprice = 8 + length;
     for (var i = 1; i <= 9; i++ ){
       totalprice+= parseInt(beads[i].size) + 1;
     };
@@ -11,16 +11,19 @@ $(document).ready(function(){
     $('#product_price').val(totalprice);
   };
 
-  $("#product_price").prop("readonly", true);
-  calculatePrice();
-
-  // CHOOSING BEADS
+  // CHOOSING BEADS & STRANDS
+  var strand = 'black & white';
+  var length = 0;
   var beadShape = 'square';
   var beadPattern = 'solid';
   var beadSize = 2;
   var beadNumber = '1';
   var beadImageId = '#bead' + beadNumber;
   var beadInputId = '#product_bead' + beadNumber;
+
+  $("#product_price").prop("readonly", true);
+  calculatePrice();
+  console.log(length);
 
   $('.bead').click(function(){
     var beadPosition = $(this).offset();
@@ -33,6 +36,18 @@ $(document).ready(function(){
     $('.patternPicker').val(beads[beadNumber].pattern);
     $('.sizePicker').val(beads[beadNumber].size);
     $('.selectedBead').html('Bead ' + beadNumber);
+  });
+
+  $('.strandPicker').change(function(){
+    strand = $(this).val();
+    console.log('strand is ' + strand);
+    strandRequest();
+  });
+
+  $('.lengthPicker').change(function(){
+    length = $(this).val();
+    length = parseInt(length);
+    calculatePrice();
   });
 
   $('.shapePicker').change(function(){
@@ -102,15 +117,9 @@ $(document).ready(function(){
     calculatePrice();
   };
 
-  // CHOOSING THE STRAND
-    $('#product_strand').change(function(){
-      if ($(this).val() === 'Black') {
-        $('.necklace-view').css('background-image', 'url("/assets/editor/strand_brown.png")');
-      } else if ($(this).val() === 'Black & White') {
-        $('.necklace-view').css('background-image', 'url("/assets/editor/strand3.png")');
-      } else {
-      };
-    });
-
+  var strandRequest = function(){
+    var strandRequestFile = 'url("/assets/editor/strands/' + strand + '.png")';
+    $('.necklace-view').css('background-image', strandRequestFile);
+  };
 
 });

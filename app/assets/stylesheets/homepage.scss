@@ -1,0 +1,32 @@
+.homepage {
+
+  .splash {
+    background-image: url('textures/squiggles-01.png');
+    background-color: #B8EBFC;
+    background-position: center;
+    height: 500px;
+    text-align: center;
+    .text-block {
+      h1 {
+        font-family: 'Playfair Display', serif;
+        font-size: 35px;
+      }
+      margin-top: 100px;
+      form { display: inline-block; }
+      .bead-it-btn {
+        width: 200px;
+        height: 50px;
+      }
+      .blinkers { height: 50px; margin-top: -10px; }
+    }
+  }
+
+  .featured-designs {
+    padding: 20px 100px;
+    text-align: center;
+    h1 { margin-bottom: 0; }
+    h3 { margin-top: 0; margin-bottom: 50px; }
+  }
+
+
+}

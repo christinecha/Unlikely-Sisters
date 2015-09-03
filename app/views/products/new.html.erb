@@ -2,6 +2,13 @@
   <%= form_for(@product) do |f| %>
   <%= f.text_field :name, placeholder: "My Awesome Necklace", class: "necklaceNamer" %>
   <br>
+  <p>Your Strand: </p>
+  <select class="strandPicker">
+    <%= options_for_select([["black & white"], "black"]) %>
+  </select>
+  <select class="lengthPicker">
+    <%= options_for_select([["55cm", 0], ["80cm", 2]]) %>
+  </select>
   <h3 class="pricetag">Total Price: $<%= f.text_field :price %></h3>
   <%= f.submit 'SAVE', class: "btn2" %>
   <div class="container-fluid necklace-view">
@@ -20,15 +27,16 @@
 
   <div class="beadpicker">
     <%= render 'beadpicker' %>
-    <%= f.text_field :bead1, style: "display:none;", value: "square_white_solid" %><br>
-    <%= f.text_field :bead2, style: "display:none;", value: "square_white_solid" %><br>
-    <%= f.text_field :bead3, style: "display:none;", value: "square_white_solid" %><br>
-    <%= f.text_field :bead4, style: "display:none;", value: "square_white_solid" %><br>
-    <%= f.text_field :bead5, style: "display:none;", value: "square_white_solid" %><br>
-    <%= f.text_field :bead6, style: "display:none;", value: "square_white_solid" %><br>
-    <%= f.text_field :bead7, style: "display:none;", value: "square_white_solid" %><br>
-    <%= f.text_field :bead8, style: "display:none;", value: "square_white_solid" %><br>
-    <%= f.text_field :bead9, style: "display:none;", value: "square_white_solid" %><br>
+    <%= f.hidden_field :bead1, style: "display:none;", value: "square_white_solid" %><br>
+    <%= f.hidden_field :bead2, style: "display:none;", value: "square_white_solid" %><br>
+    <%= f.hidden_field :bead3, style: "display:none;", value: "square_white_solid" %><br>
+    <%= f.hidden_field :bead4, style: "display:none;", value: "square_white_solid" %><br>
+    <%= f.hidden_field :bead5, style: "display:none;", value: "square_white_solid" %><br>
+    <%= f.hidden_field :bead6, style: "display:none;", value: "square_white_solid" %><br>
+    <%= f.hidden_field :bead7, style: "display:none;", value: "square_white_solid" %><br>
+    <%= f.hidden_field :bead8, style: "display:none;", value: "square_white_solid" %><br>
+    <%= f.hidden_field :bead9, style: "display:none;", value: "square_white_solid" %><br>
+    <%= f.hidden_field :strand, style: "display:none;", value: "black & white" %><br>
   </div>
 
 
