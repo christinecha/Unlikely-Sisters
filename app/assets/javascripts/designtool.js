@@ -29,31 +29,31 @@ $(document).ready(function(){
 
   $('.bead').click(function(){
     var beadPosition = $(this).offset();
-    $('.beadpicker').css('margin-left', (beadPosition.left - 50) + 'px');
-    $('.beadpicker').show();
+    $('.necklace-view').css('text-align', 'left');
+    $('.beadSelector').show();
+    $('.beadSelector').css('margin-left', (beadPosition.left + $(this).width()/2 - 7) + 'px');
     beadNumber = $(this).attr('id').slice(-1);
     beadImageId = '#bead' + beadNumber;
     beadInputId = '#product_bead' + beadNumber;
-    $('.shapePicker').val(beads[beadNumber].shape);
-    $('.patternPicker').val(beads[beadNumber].pattern);
-    $('.sizePicker').val(beads[beadNumber].size);
-    $('.selectedBead').html('Bead ' + beadNumber);
   });
 
-  $('.strandPicker').change(function(){
-    strand = $(this).val();
+  $('.strandPicker .option').click(function(){
+    strand = $(this).text();
     console.log('strand is ' + strand);
     strandRequest();
   });
 
-  $('.lengthPicker').change(function(){
-    length = $(this).val();
-    length = parseInt(length);
+  $('.lengthPicker .option').click(function(){
+    if ($(this).text() == '80cm'){
+      length = 2;
+    } else {
+      length = 0;
+    }
     calculatePrice();
   });
 
-  $('.shapePicker').change(function(){
-    beadShape = $(this).val();
+  $('.shapePicker .option').click(function(){
+    beadShape = $(this).text();
     console.log('beadShape is ' + beadShape);
     beads[beadNumber].shape = beadShape;
     beadPattern = beads[beadNumber].pattern;
@@ -61,8 +61,8 @@ $(document).ready(function(){
     beadRequest();
   });
 
-  $('.patternPicker').change(function(){
-    beadPattern = $(this).val();
+  $('.patternPicker .option').click(function(){
+    beadPattern = $(this).text();
     console.log('beadPattern is ' + beadPattern);
     beads[beadNumber].pattern = beadPattern;
     beadShape = beads[beadNumber].shape;
@@ -70,8 +70,14 @@ $(document).ready(function(){
     beadRequest();
   });
 
-  $('.sizePicker').change(function(){
-    beadSize = $(this).val();
+  $('.sizePicker .option').click(function(){
+    if ($(this).text() == 'small'){
+      beadSize = 1;
+    } else if ($(this).text() == 'large'){
+      beadSize = 3;
+    } else {
+      beadSize = 2;
+    }
     console.log('beadSize is ' + beadSize);
     beads[beadNumber].size = beadSize;
     beadShape = beads[beadNumber].shape;
@@ -80,11 +86,12 @@ $(document).ready(function(){
   });
 
   $('.removeBead').click(function(){
+    $('.beadSelector').hide();
+    $('.custom-dropdown .dropdown').hide();
     $(beadImageId).hide();
     $(beadInputId).val('removed');
     beads[beadNumber].size = 0;
     $('.beadGraveyard').append('<button class="addBead" value=' + beadNumber + '>Add back Bead ' + beadNumber + '</button>');
-    $('.beadpicker').hide();
     beadRequest();
   });
 
@@ -96,7 +103,6 @@ $(document).ready(function(){
     beadInputId = '#product_bead' + beadNumber;
     beads[beadNumber].size = 2;
     $(beadImageId).show();
-    $('.beadpicker').show();
     beadRequest();
   });
 
@@ -123,5 +129,6 @@ $(document).ready(function(){
     var strandRequestFile = 'url("/assets/editor/strands/' + strand + '.png")';
     $('.necklace-view').css('background-image', strandRequestFile);
   };
+
 
 });

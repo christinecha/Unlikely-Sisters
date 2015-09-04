@@ -13,6 +13,7 @@ gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
 gem 'devise'
 gem 'sass', '~> 3.4.16'
 gem 'bootstrap-sass', '~> 3.3.5'
+gem 'font-awesome-rails'
 
 
 group :development, :test do

@@ -1,22 +1,36 @@
-
-
 <div class="designtool">
   <%= form_for(@product) do |f| %>
-  <div class="row banner">
+  <div class="banner">
     <h1><span class="sniglet">beAd</span><span class="waiting-for-the-sunrise">StAtiON</span></h1>
     <%= f.text_field :name, placeholder: "name it, yo", class: "necklaceNamer" %>
-    <select class="strandPicker custom-dropdown">
-      <%= options_for_select([["STRAND", " "], "black & white", "black"]) %>
-    </select>
-    <select class="lengthPicker custom-dropdown">
-      <%= options_for_select([["LENGTH", 0], ["55cm", 0], ["80cm", 2]]) %>
-    </select>
+
+    <div class="custom-dropdown strandPicker">
+      <div class="selector">
+        <p>STRAND</p>
+      </div>
+      <div class="dropdown">
+        <div class="option">black & white</div>
+        <div class="option">black</div>
+      </div>
+    </div>
+
+    <div class="custom-dropdown lengthPicker">
+      <div class="selector">
+        <p>LENGTH</p>
+      </div>
+      <div class="dropdown">
+        <div class="option">55cm</div>
+        <div class="option">80cm</div>
+      </div>
+    </div>
+
     <input type="text" readonly="true" class="priceDisplay">
     <%= f.submit 'ADD TO CART', class: "save-button" %>
   </div>
   <br>
 
-  <div class="container-fluid necklace-view">
+  <div class="necklace-view">
+    <i class="fa fa-chevron-down beadSelector"></i>
     <div class="beads">
       <%= image_tag "editor/beads/square_white_solid.png", id: "bead1", class: "bead" %>
       <%= image_tag "editor/beads/square_white_solid.png", id: "bead2", class: "bead" %>
@@ -28,10 +42,13 @@
       <%= image_tag "editor/beads/square_white_solid.png", id: "bead8", class: "bead" %>
       <%= image_tag "editor/beads/square_white_solid.png", id: "bead9", class: "bead" %>
     </div>
+    <i class="fa fa-chevron-up beadSelector"></i>
   </div>
 
   <div class="beadpicker">
     <%= render 'beadpicker' %>
+    <div class=" beadGraveyard">
+    </div>
     <%= f.hidden_field :bead1, style: "display:none;", value: "square_white_solid" %><br>
     <%= f.hidden_field :bead2, style: "display:none;", value: "square_white_solid" %><br>
     <%= f.hidden_field :bead3, style: "display:none;", value: "square_white_solid" %><br>
@@ -44,12 +61,8 @@
     <%= f.hidden_field :strand, style: "display:none;", value: "black & white" %><br>
     <%= f.hidden_field :price %>
   </div>
-
-
   <% end %>
-  <div class="beadGraveyard">
-  </div>
 
 
-  <%= link_to 'Back', products_path %>
+
 </div>

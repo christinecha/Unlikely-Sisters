@@ -2,41 +2,63 @@
   text-align: center;
 
   .banner {
-    height: 200px;
-    background-image: url('textures/arrows-01.png');
+    height: 300px;
+    background-image: url('textures/squiggles-01.png');
+    background-size: 50%;
     background-position: center;
     background-color: #ffdcd7;
-    h1 { color: #fff; font-size: 70px; margin-top: 20px; }
-    input, select {
-      height: 50px;
-      padding: 0 20px;
-      border: none;
-      box-shadow: none;
-      font-size: 16px;
-    }
-    select {
-      -webkit-appearance: none;
-      -webkit-border-radius: 0px;
-      background-color: #fff;
-    }
-    input:focus, select:focus {
-      border: 3px solid black;
-    }
+    padding: 50px 0;
+    h1 { color: #fff; font-size: 70px; }
   }
 
+  input, .custom-dropdown {
+    height: 50px;
+    border: 3px solid white;
+    box-shadow: none;
+    font-size: 16px;
+    background-color: #fff;
+  }
+  input:focus, .focus {
+    border: 3px solid black;
+  }
+  input { padding: 0 20px; }
 
+  .custom-dropdown {
+    display: inline-block;
+    .selector { padding: 11px 18px; }
+    .dropdown {
+      background-color: #fff;
+      position: absolute;
+      z-index: 5000;
+      margin-top: 5px; }
+    .option { margin: 5px; }
+  }
 
+  .strandPicker, .lengthPicker {
+    .dropdown { background-color: #fff; }
+    .option { }
+    .selected { font-weight: bold; }
+  }
+
+  .strandPicker { min-width: 150px; }
+
+  .priceDisplay {
+    background-color: #ff789b;
+    color: #fff;
+    border: 3px solid #ff789b !important;
+  }
   .necklaceNamer {
     text-align: center;
     background-color: #fff;
   }
 
   .save-button {
-    background-color: black;
+    background-color: #ff9900;
+    border: 3px solid #ff9900 !important;
     color: #fff;
   }
 
-  .save-button:hover { background-color: #ff789b; }
+  .save-button:hover { font-weight: bold;}
 
   .pricetag {
     border: none;
@@ -53,23 +75,26 @@
     background-image: url('editor/strands/black & white.png');
     background-repeat: repeat-x;
     background-position: center;
-    text-align: center;
     overflow: scroll;
   }
 
-  .beadpicker {
-    display: none;
-    text-align: left;
-    .beadOptions {
-      text-align: center;
-      width: 200px;
-    }
-  }
-
-  .beads { min-width: 1000px; margin: 50px 0; }
+  .beads { min-width: 1000px; margin: 0; text-align: center; }
 
   .bead {
     height: 80px;
     display: inline-block;
   }
+
+  .beadpicker {
+    text-align: center;
+    .beadOptions {
+      i { font-size: 30px; }
+      p { margin-bottom: 0; }
+      .custom-dropdown {
+        width: 150px;
+        border: 3px solid black;
+      }
+    }
+  }
+
 }
