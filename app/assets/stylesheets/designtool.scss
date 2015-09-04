@@ -11,29 +11,6 @@
     h1 { color: #fff; font-size: 70px; }
   }
 
-  input, .custom-dropdown {
-    height: 50px;
-    border: 3px solid white;
-    box-shadow: none;
-    font-size: 16px;
-    background-color: #fff;
-  }
-  input:focus, .focus {
-    border: 3px solid black;
-  }
-  input { padding: 0 20px; }
-
-  .custom-dropdown {
-    display: inline-block;
-    .selector { padding: 11px 18px; }
-    .dropdown {
-      background-color: #fff;
-      position: absolute;
-      z-index: 5000;
-      margin-top: 5px; }
-    .option { margin: 5px; }
-  }
-
   .strandPicker, .lengthPicker {
     .dropdown { background-color: #fff; }
     .option { }
@@ -47,9 +24,11 @@
     color: #fff;
     border: 3px solid #ff789b !important;
   }
-  .necklaceNamer {
-    text-align: center;
-    background-color: #fff;
+
+  .quantity {
+    width: 80px;
+    color: transparent;
+    text-shadow: 0px 0px 0px black;
   }
 
   .save-button {

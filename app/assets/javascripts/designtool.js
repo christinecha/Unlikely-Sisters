@@ -5,9 +5,10 @@ $(document).ready(function(){
     var totalprice = 0;
     var strandprice = 8 + length;
     for (var i = 1; i <= 9; i++ ){
-      totalprice+= parseInt(beads[i].size) + 1;
+      totalprice+= parseInt(beads[i].size);
     };
     totalprice+= strandprice;
+    totalprice*= quantity;
     $('#product_price').val(totalprice);
     $('.priceDisplay').val('TOTAL PRICE: $' + totalprice + '.00');
     console.log(totalprice);
@@ -18,8 +19,9 @@ $(document).ready(function(){
   var length = 0;
   var beadShape = 'square';
   var beadPattern = 'solid';
-  var beadSize = 2;
-  var beadNumber = '1';
+  var beadSize = 3;
+  var quantity = 1;
+  var beadNumber = '5';
   var beadImageId = '#bead' + beadNumber;
   var beadInputId = '#product_bead' + beadNumber;
 
@@ -72,11 +74,11 @@ $(document).ready(function(){
 
   $('.sizePicker .option').click(function(){
     if ($(this).text() == 'small'){
-      beadSize = 1;
-    } else if ($(this).text() == 'large'){
-      beadSize = 3;
-    } else {
       beadSize = 2;
+    } else if ($(this).text() == 'large'){
+      beadSize = 4;
+    } else {
+      beadSize = 3;
     }
     console.log('beadSize is ' + beadSize);
     beads[beadNumber].size = beadSize;
@@ -101,9 +103,14 @@ $(document).ready(function(){
     $(this).remove();
     beadImageId = '#bead' + beadNumber;
     beadInputId = '#product_bead' + beadNumber;
-    beads[beadNumber].size = 2;
+    beads[beadNumber].size = 3;
     $(beadImageId).show();
     beadRequest();
+  });
+
+  $('.quantity').change(function(){
+    quantity = $(this).val();
+    calculatePrice();
   });
 
   var beadRequest = function(){
@@ -114,11 +121,11 @@ $(document).ready(function(){
     var beadRequestFile = '/assets/editor/beads/' + beadRequest + '.png';
     console.log(beadRequestFile)
     $(beadImageId).attr('src', beadRequestFile);
-    if (beadSize == 3){
+    if (beadSize == 4){
       $(beadImageId).css('height', 100);
-    } else if (beadSize == 2){
+    } else if (beadSize == 3){
       $(beadImageId).css('height', 80);
-    } else if (beadSize == 1){
+    } else if (beadSize == 2){
       $(beadImageId).css('height', 60);
     };
     $(beadInputId).val(beadRequest);
@@ -129,6 +136,24 @@ $(document).ready(function(){
     var strandRequestFile = 'url("/assets/editor/strands/' + strand + '.png")';
     $('.necklace-view').css('background-image', strandRequestFile);
   };
+
+
+  //ON SUBMIT, ADD TO CART & TAKE ME THERE!
+  $('#new_product').submit(function() {
+    var valuesToSubmit = $(this).serialize();
+    $.ajax({
+        type: "POST",
+        url: $(this).attr('action'), //sumbits it to the given url of the form
+        data: valuesToSubmit,
+        dataType: "JSON" // you want a difference between normal and ajax-calls, and json is standard
+    }).success(function(json){
+        console.log("success", json);
+        $('#order_item_product_id').val(json.id);
+        $('#order_item_quantity').val(quantity);
+        $('#order_item_product_id').submit();
+    });
+  });
+
 
 
 });

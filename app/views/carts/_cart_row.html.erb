@@ -1,28 +1,41 @@
-<div class="well">
-
-  <div class="row">
-    <div class="col-xs-8">
-      <h4><%= product.name %></h4>
-    </div>
-    <div class="col-xs-4">
-
-      <%= form_for order_item, remote: true do |f| %>
-        <h4 class="text-right">Unit Price: <span style="color: green"><%= number_to_currency order_item.unit_price %></span></h4>
-        <div class="row">
-          <div class="col-xs-4">
-            <%= f.number_field :quantity, value: order_item.quantity.to_i, class: "form-control", min: 1 %>
-            <%= f.hidden_field :product_id, value: product.id %>
-          </div>
-          <div class="col-xs-8 text-right">
-            <div class="btn-group">
-              <%= f.submit "Update Quantity", class: "btn btn-primary" %>
-              <%= link_to "Delete", order_item, { data: { confirm: "Are you sure you wish to delete the product '#{order_item.product.name}' from your cart?" }, method: :delete, remote: true, class: "btn btn-danger" } %>
-            </div>
-          </div>
+<div class="cart--product-container">
+  <h4>
+  <% if product.name? %>
+    <%= product.name %>
+  <% else %>
+    untitled necklace
+  <% end %>
+  </h4>
+  <br>
+  <div class="designtool">
+    <div class="necklace-view">
+      <div class="beads">
+        <div class="beads">
+          <%= image_tag "editor/beads/#{product.bead1}.png", class: "bead" %>
+          <%= image_tag "editor/beads/#{product.bead2}.png", class: "bead" %>
+          <%= image_tag "editor/beads/#{product.bead3}.png", class: "bead" %>
+          <%= image_tag "editor/beads/#{product.bead4}.png", class: "bead" %>
+          <%= image_tag "editor/beads/#{product.bead5}.png", class: "bead" %>
+          <%= image_tag "editor/beads/#{product.bead6}.png", class: "bead" %>
+          <%= image_tag "editor/beads/#{product.bead7}.png", class: "bead" %>
+          <%= image_tag "editor/beads/#{product.bead8}.png", class: "bead" %>
+          <%= image_tag "editor/beads/#{product.bead9}.png", class: "bead" %>
         </div>
-        <h4 class="text-right">Total Price: <span style="color: green"><%= number_to_currency order_item.total_price %></span></h4>
-      <% end %>
+      </div>
     </div>
-
   </div>
+
+  <br>
+  <%= form_for order_item, remote: true do |f| %>
+    <h5>
+      UNIT PRICE: <%= number_to_currency order_item.unit_price %>
+      &bull;
+      TOTAL PRICE: <%= number_to_currency order_item.total_price %>
+    </h5>
+    <%= f.number_field :quantity, value: order_item.quantity.to_i, min: 1 %>
+    <%= f.hidden_field :product_id, value: product.id %>
+    <%= f.submit "UPDATE", class: "btn btn-primary" %>
+    <%= link_to "REMOVE", order_item, { data: { confirm: "Are you sure you wish to delete the product '#{order_item.product.name}' from your cart?" }, method: :delete, remote: true, class: "btn btn-danger" } %>
+  <% end %>
+
 </div>

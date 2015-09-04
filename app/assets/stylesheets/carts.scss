@@ -1,3 +1,24 @@
-// Place all the styles related to the Carts controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.cart--banner {
+  height: 300px;
+  background-image: url('textures/squiggles-01.png');
+  background-color: #eee;
+  background-repeat: repeat;
+  background-position: center;
+  padding: 60px 0;
+  text-align: center;
+}
+
+.cart--product-container {
+  text-align: center;
+  padding: 50px 0;
+}
+
+#order_item_quantity {
+  border: 3px solid black;
+  width: 80px;
+  color: transparent;
+  text-shadow: 0px 0px 0px black;
+}
+
+#edit_order_item {
+}

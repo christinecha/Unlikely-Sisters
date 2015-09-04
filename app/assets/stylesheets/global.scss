@@ -1,7 +1,8 @@
 *:focus {
   border: none;
-  box-shadow: none;
-  outline: none;
+  box-shadow: none !important;
+  -webkit-box-shadow: none !important;
+  outline: none !important;
 }
 
 body {
@@ -35,3 +36,59 @@ img { max-width: 100%; }
 .waiting-for-the-sunrise {
   font-family: 'Waiting for the Sunrise', cursive;
 }
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+   opacity: 1;
+}
+
+input, .custom-dropdown {
+  height: 50px;
+  border: 3px solid white;
+  box-shadow: none;
+  font-size: 16px;
+  background-color: #fff;
+}
+input[type=number]:focus, input[type=text]:focus, .focus {
+  border: 3px solid black;
+}
+input { padding: 0 20px; }
+
+.custom-dropdown {
+  display: inline-block;
+  .selector { padding: 11px 18px; }
+  .dropdown {
+    background-color: #fff;
+    position: absolute;
+    z-index: 5000;
+    margin-top: 5px; }
+  .option { margin: 5px; }
+}
+
+.btn {
+  border-radius: 0;
+  box-shadow: none;
+  color: #fff;
+  border: none;
+  font-size: 16px;
+  height: 50px;
+  padding: 0 20px;
+  vertical-align: inherit;
+}
+
+.btn:hover { font-weight: bold; }
+
+.btn-primary {
+  background-color: #ff789b;
+}
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active:focus,
+.btn-primary:active,
+.btn-primary:after {
+  background-color: #ff789b;
+}
+
+.btn-danger { padding: 14px 20px 0 20px; }
+
+.bead-it-btn:focus { border: none !important; }

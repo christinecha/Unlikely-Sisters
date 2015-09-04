@@ -15,6 +15,8 @@ class ProductsController < ApplicationController
   # GET /products/new
   def new
     @product = Product.new
+    @order_item = current_order.order_items.new
+
   end
 
   # GET /products/1/edit
@@ -28,13 +30,15 @@ class ProductsController < ApplicationController
 
     respond_to do |format|
       if @product.save
-        format.html { redirect_to products_path, notice: 'product was successfully created.' }
+        format.html { redirect_to cart_path, notice: 'product was successfully created.' }
         format.json { render :show, status: :created, location: @product }
       else
         format.html { render :new }
         format.json { render json: @product.errors, status: :unprocessable_entity }
       end
     end
+    @order_item = current_order.order_items.new
+
   end
 
   # PATCH/PUT /products/1

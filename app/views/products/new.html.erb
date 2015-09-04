@@ -1,5 +1,6 @@
 <div class="designtool">
   <%= form_for(@product) do |f| %>
+
   <div class="banner">
     <h1><span class="sniglet">beAd</span><span class="waiting-for-the-sunrise">StAtiON</span></h1>
     <%= f.text_field :name, placeholder: "name it, yo", class: "necklaceNamer" %>
@@ -24,9 +25,12 @@
       </div>
     </div>
 
+    <input type="number" class="quantity" min="1" value="1" onkeydown="return false">
     <input type="text" readonly="true" class="priceDisplay">
+
     <%= f.submit 'ADD TO CART', class: "save-button" %>
   </div>
+
   <br>
 
   <div class="necklace-view">
@@ -61,6 +65,16 @@
     <%= f.hidden_field :strand, style: "display:none;", value: "black & white" %><br>
     <%= f.hidden_field :price %>
   </div>
+  <% end %>
+
+  <%= form_for @order_item, remote: true do |f| %>
+    <div class="input-group">
+      <%= f.hidden_field :quantity, value: 1, class: "form-control", min: 1 %>
+      <div class="input-group-btn">
+        <%= f.hidden_field :product_id %>
+        <%= f.submit "Add to Cart", class: "btn btn-primary" %>
+      </div>
+    </div>
   <% end %>
 
 
