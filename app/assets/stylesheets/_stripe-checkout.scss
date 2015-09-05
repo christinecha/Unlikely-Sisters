@@ -1,0 +1,28 @@
+
+.stripe-button-el {
+  width: 220px;
+  height: 50px !important;
+  background-color: white;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  border: none !important;
+  background-image: linear-gradient(white, white) !important;
+  color: black !important ;
+  font-family: 'Playfair Display', serif;
+  font-size: 20px;
+  font-weight: 400;
+  padding: 0 20px !important;
+  span {
+    display: none !important;
+  }
+}
+
+.stripe-button-el:hover {
+  font-family: 'sniglet', sans-serif;
+  font-weight: 800;
+  font-size:25px;
+}
+
+.bodyView {
+  border-radius: 0;
+}

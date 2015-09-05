@@ -11,15 +11,33 @@
     <div class="necklace-view">
       <div class="beads">
         <div class="beads">
-          <%= image_tag "editor/beads/#{product.bead1}.png", class: "bead" %>
-          <%= image_tag "editor/beads/#{product.bead2}.png", class: "bead" %>
-          <%= image_tag "editor/beads/#{product.bead3}.png", class: "bead" %>
-          <%= image_tag "editor/beads/#{product.bead4}.png", class: "bead" %>
-          <%= image_tag "editor/beads/#{product.bead5}.png", class: "bead" %>
-          <%= image_tag "editor/beads/#{product.bead6}.png", class: "bead" %>
-          <%= image_tag "editor/beads/#{product.bead7}.png", class: "bead" %>
-          <%= image_tag "editor/beads/#{product.bead8}.png", class: "bead" %>
-          <%= image_tag "editor/beads/#{product.bead9}.png", class: "bead" %>
+          <% if product.bead1? %>
+            <%= image_tag "editor/beads/#{product.bead1}.png", class: "bead" %>
+          <% end %>
+          <% if product.bead2? %>
+            <%= image_tag "editor/beads/#{product.bead2}.png", class: "bead" %>
+          <% end %>
+          <% if product.bead3? %>
+            <%= image_tag "editor/beads/#{product.bead3}.png", class: "bead" %>
+          <% end %>
+          <% if product.bead4? %>
+            <%= image_tag "editor/beads/#{product.bead4}.png", class: "bead" %>
+          <% end %>
+          <% if product.bead5? %>
+            <%= image_tag "editor/beads/#{product.bead5}.png", class: "bead" %>
+          <% end %>
+          <% if product.bead6? %>
+            <%= image_tag "editor/beads/#{product.bead6}.png", class: "bead" %>
+          <% end %>
+          <% if product.bead7? %>
+            <%= image_tag "editor/beads/#{product.bead7}.png", class: "bead" %>
+          <% end %>
+          <% if product.bead8? %>
+            <%= image_tag "editor/beads/#{product.bead8}.png", class: "bead" %>
+          <% end %>
+          <% if product.bead9? %>
+            <%= image_tag "editor/beads/#{product.bead9}.png", class: "bead" %>
+          <% end %>
         </div>
       </div>
     </div>
@@ -34,8 +52,8 @@
     </h5>
     <%= f.number_field :quantity, value: order_item.quantity.to_i, min: 1 %>
     <%= f.hidden_field :product_id, value: product.id %>
-    <%= f.submit "UPDATE", class: "btn btn-primary" %>
-    <%= link_to "REMOVE", order_item, { data: { confirm: "Are you sure you wish to delete the product '#{order_item.product.name}' from your cart?" }, method: :delete, remote: true, class: "btn btn-danger" } %>
+    <%= f.submit "UPDATE", class: "btn btn-primary", onClick: "history.go(0)" %>
+    <%= link_to "REMOVE", order_item, { data: { confirm: "Are you sure you wish to delete the product '#{order_item.product.name}' from your cart?" }, method: :delete, remote: true, class: "btn btn-danger", onClick: "history.go(0)" } %>
   <% end %>
 
 </div>
