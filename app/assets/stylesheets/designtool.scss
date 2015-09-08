@@ -57,10 +57,10 @@
     overflow: scroll;
   }
 
-  .beads { min-width: 1000px; margin: 0; text-align: center; }
+  .beads { min-width: 1000px; margin: 0; text-align: center; font-size: 8px; }
 
   .bead {
-    height: 80px;
+    height: 90px;
     display: inline-block;
   }
 
@@ -75,5 +75,14 @@
       }
     }
   }
+
+  .addBead {
+    border: 2px solid black;
+    background-color: white;
+    box-shadow: none;
+    p { font-size: 11px !important; }
+  }
+
+  .addBead:hover { opacity: .6; }
 
 }

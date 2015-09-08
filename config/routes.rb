@@ -6,10 +6,7 @@ Rails.application.routes.draw do
   get 'static/orderconfirmation'
 
   resources :charges
-  resources :beads
   resources :products
-  resources :strands
-  resources :clasps
   resources :static
   resource :cart, only: [:show]
   resources :order_items, only: [:create, :update, :destroy]
