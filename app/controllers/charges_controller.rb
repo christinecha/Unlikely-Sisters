@@ -4,26 +4,23 @@ class ChargesController < ApplicationController
   end
 
   def create
-    @orders = current_order.order_items.all
-
     customer = Stripe::Customer.create(
-      :email => 'example@stripe.com',
+      :email => nil,
       :card  => params[:stripeToken]
     )
 
     charge = Stripe::Charge.create(
       :customer    => customer.id,
       :amount      => Integer(current_order.subtotal_cents),
-      :description => 'Rails Stripe customer',
+      :description => "Order ##{current_order.id}",
       :currency    => 'usd'
     )
-
-    @orders.delete_all
 
     rescue Stripe::CardError => e
       flash[:error] = e.message
       redirect_to charges_path
   end
+
 
 
 end

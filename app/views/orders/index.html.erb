@@ -1,0 +1,11 @@
+<% @orders.where(:order_status => 1).each do |order| %>
+
+  <div>
+    <h1>placed order # <%= order.id %> </h1>
+    <% @orderitems.where(:order_id => order.id).each do |orderitem| %>
+    <p> <%= orderitem.id %> </p>
+    <% end %>
+
+  </div>
+
+<% end %>

@@ -1,6 +1,6 @@
 <div class="homepage">
 
-  <div class="row splash">
+  <div class="splash">
     <div class="text-block">
       <%= image_tag('logos/michaka.png') %>
       <h1>classic. <span class="sniglet">funky. </span><span class="waiting-for-the-sunrise">HANDMADE.</span></h1>
@@ -11,32 +11,28 @@
     </div>
   </div>
 
-  <div class="row featured-designs">
+  <div class="featured-designs">
     <h1><span class="sniglet">we </span><%= image_tag('graphics/heart_100x100.gif') %><span class="waiting-for-the-sunrise">these</span></h1>
     <h3>&#35;michaka</h3>
     <div class="col-md-4">
-      <%= image_tag('editor/test.jpg') %>
+      <%= image_tag('photos/IMG_0121.png') %>
       <div class="caption">
-        <h4>Featured Product</h4>
+        <h4>get inspired</h4>
       </div>
     </div>
     <div class="col-md-4">
-      <%= image_tag('editor/test.jpg') %>
+      <%= image_tag('photos/IMG_0120.png') %>
       <div class="caption">
-        <h4>Featured Product</h4>
+        <h4>meet the makers</h4>
       </div>
     </div>
     <div class="col-md-4">
-      <%= image_tag('editor/test.jpg') %>
+      <%= image_tag('photos/IMG_0123.png') %>
       <div class="caption">
-        <h4>Featured Product</h4>
+        <h4><%= link_to 'bead your own', new_product_path %></h4>
       </div>
     </div>
   </div>
 
-  <h1>Listing Products</h1>
 
-  <br>
-
-  <%= link_to 'New Product', new_product_path %>
 </div>

@@ -128,6 +128,8 @@ $(document).ready(function(){
     var beadRequest = beadShape + '_' + beadColor + '_' + beadPattern;
     var beadRequestFile = '/assets/editor/beads/' + beadRequest + '.png';
     $(beadImageId).attr('src', beadRequestFile);
+    $(beadInputId).val(beadRequest);
+    console.log($('#product_bead1').val());
     calculatePrice();
   };
 
@@ -141,15 +143,15 @@ $(document).ready(function(){
   $('#new_product').submit(function() {
     var valuesToSubmit = $(this).serialize();
     $.ajax({
-        // type: "POST",
+        type: "POST",
         url: $(this).attr('action'), //sumbits it to the given url of the form
         data: valuesToSubmit,
         dataType: "JSON" // you want a difference between normal and ajax-calls, and json is standard
     }).success(function(json){
-        // console.log("success", JSON.stringify(json));
+        console.log(json);
         $('#order_item_product_id').val(json.id);
         $('#order_item_quantity').val(quantity);
-        $('#order_item_product_id').submit();
+        $('#new_order_item').submit();
     });
   });
 

@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   resources :charges
   resources :products
   resources :static
+  resources :orders
   resource :cart, only: [:show]
   resources :order_items, only: [:create, :update, :destroy]
   devise_for :users
