@@ -1,4 +1,5 @@
 class ChargesController < ApplicationController
+  protect_from_forgery :except => :webhook
 
   def new
   end
@@ -19,6 +20,10 @@ class ChargesController < ApplicationController
     rescue Stripe::CardError => e
       flash[:error] = e.message
       redirect_to charges_path
+  end
+
+  def webhook
+    # Process webhook data in `params`
   end
 
 

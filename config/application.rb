@@ -6,10 +6,13 @@ require 'rails/all'
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
+
 module BeadProject
   class Application < Rails::Application
     # Settings in config/environments/* take precedence over those specified here.
     config.autoload_paths += %W(#{config.root}/lib)
+    config.serve_static_assets = true
+
 
     # Set Time.zone default to the specified zone and make Active Record auto-convert to this zone.
     # Run "rake -D time" for a list of tasks for finding time zone names. Default is UTC.
