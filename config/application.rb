@@ -11,8 +11,7 @@ module BeadProject
   class Application < Rails::Application
     # Settings in config/environments/* take precedence over those specified here.
     config.autoload_paths += %W(#{config.root}/lib)
-    config.assets.compile = true
-    config.serve_static_files = true
+
 
 
     # Set Time.zone default to the specified zone and make Active Record auto-convert to this zone.
