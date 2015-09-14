@@ -5,6 +5,7 @@
     height: 300px;
     background-image: url('textures/squiggles-01.png');
     background-size: 50%;
+    background-repeat: repeat;
     background-position: center;
     background-color: #ffdcd7;
     padding: 50px 0;
@@ -84,5 +85,28 @@
   }
 
   .addBead:hover { opacity: .6; }
+
+
+  @media (max-width:400px) {
+    .banner {
+      height: 400px;
+      padding: 10px 0;
+      h1 { font-size: 50px; }
+    }
+    .strandPicker, .lengthPicker, .necklaceNamer, .save-button, .custom-dropdown {
+      display: block;
+      margin: 5px 5%;
+      width: 90% !important;
+      height: auto;
+      min-height: 50px;
+    }
+    .dropdown { width: 100%; position: relative; border-top: 1px solid #eee; }
+    .option { min-height: 50px; padding-top: 12px; }
+    .quantity { width: 19%; margin-right: 1%; }
+    .priceDisplay { width: 70%; }
+    .beads { text-align: left; padding: 0 10px; min-width: 800px; }
+    .beadSelector { color: #fff; }
+    .beadpicker { display: none; }
+  }
 
 }

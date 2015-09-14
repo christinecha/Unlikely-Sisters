@@ -1,5 +1,5 @@
 .navbar {
-  padding: 0 20px; 
+  padding: 0 20px;
   margin-bottom: 0;
   background-color: white;
   border: none;
@@ -10,4 +10,10 @@
   .navbar-brand {
     img { max-height: 100%; }
   }
+
+  @media (max-width: 400px) {
+    .navbar-brand { float: none; }
+    .navbar, .navbar-default, .navbar-right, .navbar-header, .navbar-brand { text-align: center; }
+  }
+
 }
