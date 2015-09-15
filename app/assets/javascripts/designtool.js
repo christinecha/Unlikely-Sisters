@@ -155,7 +155,6 @@ $(document).ready(function(){
       $('#new_order_item').submit();
       window.location = '/cart';
     });
-    return false;
   });
 
 
