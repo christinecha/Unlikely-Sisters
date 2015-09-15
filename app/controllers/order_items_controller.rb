@@ -3,8 +3,8 @@ class OrderItemsController < ApplicationController
   def create
     @order = current_order
     @order_item = @order.order_items.new(order_item_params)
-    @order.save
     @order.id = session[:order_id]
+    @order.save
   end
 
   def update
