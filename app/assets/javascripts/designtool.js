@@ -140,8 +140,8 @@ $(document).ready(function(){
 
 
   //ON SUBMIT, ADD TO CART & TAKE ME THERE!
-  $('.save-button').click(function() {
-    var valuesToSubmit = $('#new_product').serialize();
+  $('#new_product').submit(function() {
+    var valuesToSubmit = $(this).serialize();
     $.ajax({
       type: "POST",
       cache: false,
