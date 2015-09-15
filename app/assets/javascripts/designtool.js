@@ -153,6 +153,7 @@ $(document).ready(function(){
       $('#order_item_product_id').val(json.id);
       $('#order_item_quantity').val(quantity);
       $('#new_order_item').submit();
+      window.location = '/cart';
     });
   });
 

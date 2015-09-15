@@ -5,7 +5,6 @@ class OrderItemsController < ApplicationController
     @order_item = @order.order_items.new(order_item_params)
     @order.save
     session[:order_id] = @order.id
-    render :js => "window.location.href = '/cart';"
   end
 
   def update
