@@ -144,7 +144,6 @@ $(document).ready(function(){
     var valuesToSubmit = $(this).serialize();
     $.ajax({
       type: "POST",
-      cache: false,
       url: '/products', //sumbits it to the given url of the form
       data: valuesToSubmit,
       dataType: "JSON" // you want a difference between normal and ajax-calls, and json is standard
@@ -153,9 +152,7 @@ $(document).ready(function(){
       $('#order_item_product_id').val(json.id);
       $('#order_item_quantity').val(quantity);
       $('#new_order_item').submit();
-      window.location = '/cart';
     });
-    return false;
   });
 
 

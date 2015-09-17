@@ -2,9 +2,9 @@ class OrderItemsController < ApplicationController
 
   def create
     @order = current_order
-    @order_item = @order.order_items.new(order_item_params)
-    @order.id = session[:order_id]
+    @order_item = @order.order_items.create(order_item_params)
     @order.save
+    render :js => "window.location = '/cart';"
   end
 
   def update
