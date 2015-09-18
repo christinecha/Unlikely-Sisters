@@ -8,9 +8,17 @@
   </div>
 <% end %>
 <% if @order_items.size == 0 %>
-  <p class="text-center">
-    There are no items in your shopping cart. <%= link_to "BEAD IT!", root_path %>
-  </p>
+
+  <div class="no-items">
+    <p class="text-center">
+      It looks like you haven't added anything to your cart yet.
+    </p>
+    <br>
+    <%= image_tag 'graphics/blink_left.gif', class: 'blinkers' %>
+    <%= button_to "BEAD IT", new_product_path, class: "bead-it-btn", method: :get %>
+    <%= image_tag 'graphics/blink_right.gif', class: 'blinkers' %>
+  </div>
+
 <% else %>
   <% @order_items.each do |order_item| %>
     <%= render 'carts/cart_row', product: order_item.product, order_item: order_item, show_total: true %>

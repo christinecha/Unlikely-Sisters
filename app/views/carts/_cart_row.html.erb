@@ -53,7 +53,7 @@
     <%= f.number_field :quantity, value: order_item.quantity.to_i, min: 1 %>
     <%= f.hidden_field :product_id, value: product.id %>
     <%= f.submit "UPDATE", class: "btn btn-primary", onClick: "history.go(0)" %>
-    <%= link_to "REMOVE", order_item, { data: { confirm: "Are you sure you wish to delete the product '#{order_item.product.name}' from your cart?" }, method: :delete, remote: true, class: "btn btn-danger", onClick: "history.go(0)" } %>
+    <%= link_to "REMOVE", order_item, { data: { confirm: "Are you sure you wish to delete this product from your cart? This cannot be undone. (Eek!)" }, method: :delete, remote: true, class: "btn btn-danger", onClick: "history.go(0)" } %>
   <% end %>
 
 </div>

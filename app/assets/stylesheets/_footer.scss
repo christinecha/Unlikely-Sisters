@@ -4,5 +4,12 @@
 
   .navbar-nav > li > a { padding: 0 20px; }
   .navbar-right > li { float: right; }
+}
 
+@media (max-width: 500px){
+  .footer {
+    .navbar-nav { text-align: center; }
+    .navbar-left > li { float: none; }
+    .navbar-right > li { float: none; }
+  }
 }

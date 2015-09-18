@@ -11,9 +11,13 @@
     img { max-height: 100%; }
   }
 
-  @media (max-width: 400px) {
-    .navbar-brand { float: none; }
+  @media (max-width: 500px) {
+    .navbar-brand {
+      float: none;
+      img { width: 100px; margin-left: auto; margin-right: auto; }
+    }
     .navbar, .navbar-default, .navbar-right, .navbar-header, .navbar-brand { text-align: center; }
+    .navbar-header { height: 40px; }
   }
 
 }

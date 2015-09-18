@@ -20,5 +20,8 @@
   text-shadow: 0px 0px 0px black;
 }
 
-#edit_order_item {
+.no-items {
+  padding: 50px 0;
+  text-align: center;
+  form { display: inline-block; }
 }

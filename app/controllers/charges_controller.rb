@@ -6,24 +6,22 @@ class ChargesController < ApplicationController
 
   def create
     customer = Stripe::Customer.create(
-      :email => nil,
-      :card  => params[:stripeToken]
+      :card  => params[:stripeToken],
+      :email => params[:stripeEmail]
     )
 
     charge = Stripe::Charge.create(
       :customer    => customer.id,
       :amount      => Integer(current_order.subtotal_cents),
       :description => "Order ##{current_order.id}",
-      :currency    => 'usd'
+      :currency    => 'usd',
+      :receipt_email => customer.email
     )
 
     rescue Stripe::CardError => e
       flash[:error] = e.message
       redirect_to charges_path
-  end
 
-  def webhook
-    # Process webhook data in `params`
   end
 
 
