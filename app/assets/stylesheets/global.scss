@@ -11,6 +11,8 @@ body {
 
 p { margin-bottom: 0; }
 
+p.note { font-size: 11px; }
+
 img { max-width: 100%; }
 
 .container-fluid { padding: 0; margin: 0; }
@@ -55,13 +57,15 @@ input { padding: 0 20px; }
 
 .custom-dropdown {
   display: inline-block;
-  .selector { padding: 11px 18px; }
+  .selector { padding: 11px 18px; cursor: pointer; }
   .dropdown {
     background-color: #fff;
     position: absolute;
     z-index: 5000;
-    margin-top: 5px; }
-  .option { margin: 5px; }
+    margin-top: 5px;
+    cursor: pointer;
+  }
+  .option { margin: 5px; cursor: pointer; }
 }
 
 .btn {

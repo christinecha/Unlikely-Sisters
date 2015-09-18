@@ -21,15 +21,16 @@
   .strandPicker { min-width: 150px; }
 
   .priceDisplay {
-    background-color: #ff789b;
-    color: #fff;
-    border: 3px solid #ff789b !important;
+    background-color: #fff;
+    color: #000;
+    border: 3px solid #fff !important;
   }
 
   .quantity {
     width: 80px;
     color: transparent;
     text-shadow: 0px 0px 0px black;
+    margin-right: 5px;
   }
 
   .save-button {
@@ -56,9 +57,10 @@
     background-repeat: repeat-x;
     background-position: center;
     overflow: scroll;
+    margin-top: 20px;
   }
 
-  .beads { min-width: 1000px; margin: 0; text-align: center; font-size: 8px; }
+  .beads { min-width: 800px; margin: 0; text-align: center; font-size: 8px; }
 
   .bead {
     height: 90px;
@@ -66,6 +68,7 @@
   }
 
   .beadpicker {
+    height: 280px;
     text-align: center;
     .beadOptions {
       i { font-size: 30px; }
@@ -73,9 +76,16 @@
       .custom-dropdown {
         width: 150px;
         border: 3px solid black;
+        .dropdown {
+          border: 3px solid black;
+          margin-left: -3px;
+        }
+        .option:hover { background-color: #000; color: #fff; }
       }
     }
   }
+
+  .removeBead:hover { color: #ff9900; }
 
   .addBead {
     border: 2px solid black;
@@ -84,6 +94,7 @@
     p { font-size: 11px !important; }
   }
 
+  .addBead { cursor: pointer; }
   .addBead:hover { opacity: .6; }
 
 
