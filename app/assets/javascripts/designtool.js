@@ -34,7 +34,7 @@ $(document).ready(function(){
   $('.bead').click(function(){
     var beadPosition = $(this).offset();
     $('.necklace-view').css('text-align', 'left');
-    $('.beadSelector').css('color', 'black');
+    $('.beadSelector').show();
     $('.beadOptions').show();
     $('.beadSelector').css('margin-left', (beadPosition.left + $(this).width()/2 - 7) + 'px');
     beadNumber = $(this).attr('data-beadnumber');
@@ -85,7 +85,7 @@ $(document).ready(function(){
   });
 
   $('.removeBead').click(function(){
-    $('.beadSelector').css('color', 'white');
+    $('.beadSelector').hide();
     $('.beadOptions').hide();
     $('.custom-dropdown .dropdown').hide();
     $(beadImageId).hide();
@@ -112,7 +112,7 @@ $(document).ready(function(){
     $(beadInputId).val(beads[beadNumber].shape + '_' + beads[beadNumber].color + '_' + beads[beadNumber].pattern);
     $(beadImageId).show();
     var beadPosition = $(this).offset();
-    $('.beadSelector').css('color', 'white');
+    $('.beadSelector').hide();
     beadRequest();
   });
 
