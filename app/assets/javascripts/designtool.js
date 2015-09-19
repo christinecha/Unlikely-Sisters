@@ -35,7 +35,7 @@ $(document).ready(function(){
     var beadPosition = $(this).offset();
     $('.necklace-view').css('text-align', 'left');
     $('.beadSelector').css('color', 'black');
-    $('.beadpicker').children().show();
+    $('.beadOptions').show();
     $('.beadSelector').css('margin-left', (beadPosition.left + $(this).width()/2 - 7) + 'px');
     beadNumber = $(this).attr('data-beadnumber');
     beadImageId = '#bead' + beadNumber;
@@ -86,7 +86,7 @@ $(document).ready(function(){
 
   $('.removeBead').click(function(){
     $('.beadSelector').css('color', 'white');
-    $('.beadpicker').children().hide();
+    $('.beadOptions').hide();
     $('.custom-dropdown .dropdown').hide();
     $(beadImageId).hide();
     $(beadInputId).val('');
@@ -94,7 +94,7 @@ $(document).ready(function(){
     $('.beadGraveyard').append(
       '<button class="addBead" value="' + beadNumber + '">'
       +
-      '<image height="50px" src="/assets/editor/beads/' + beads[beadNumber].shape + '_' + beads[beadNumber].color + '_' + beads[beadNumber].pattern + '.png" >'
+      '<image height="60px" src="/assets/editor/beads/' + beads[beadNumber].shape + '_' + beads[beadNumber].color + '_' + beads[beadNumber].pattern + '.png" >'
       +
       '<p>ADD ME BACK</p>'
       +

@@ -63,8 +63,9 @@
   .beads { min-width: 800px; margin: 0; text-align: center; font-size: 8px; }
 
   .bead {
-  height: 90px;
+    height: 90px;
     display: inline-block;
+    cursor: pointer;
   }
 
   .beadpicker {
@@ -85,13 +86,14 @@
     }
   }
 
+  .removeBead { cursor: pointer; }
   .removeBead:hover { color: #ff9900; }
 
   .addBead {
-    border: 2px solid black;
+    border: none;
     background-color: white;
     box-shadow: none;
-    p { font-size: 11px !important; }
+    p { font-size: 10px !important; }
   }
 
   .addBead { cursor: pointer; }

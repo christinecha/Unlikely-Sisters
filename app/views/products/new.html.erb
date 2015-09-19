@@ -34,6 +34,9 @@
   <p class="note">Please note that each bead is carefully handmade to order, so there may be slight variations in the size and shape of the beads.</p>
   <br>
 
+  <div class="beadGraveyard">
+  </div>
+
   <div class="necklace-view">
     <i class="fa fa-chevron-down beadSelector"></i>
     <div class="beads">
@@ -52,8 +55,6 @@
     <i class="fa fa-chevron-up beadSelector"></i>
   </div>
   <br>
-  <div class="beadGraveyard">
-  </div>
 
   <div class="beadpicker">
     <%= render 'beadpicker' %>
@@ -66,8 +67,8 @@
     <%= f.hidden_field :bead7, style: "display:none;", value: "square_white_solid" %><br>
     <%= f.hidden_field :bead8, style: "display:none;", value: "square_white_solid" %><br>
     <%= f.hidden_field :bead9, style: "display:none;", value: "square_white_solid" %><br>
-    <%= f.hidden_field :bead10, style: "display:none;", value: "square_white_solid" %><br>
-    <%= f.hidden_field :bead11, style: "display:none;", value: "square_white_solid" %><br>
+    <%= f.hidden_field :bead10, style: "display:none;", value: "" %><br>
+    <%= f.hidden_field :bead11, style: "display:none;", value: "" %><br>
     <%= f.hidden_field :strand, style: "display:none;", value: "black & white" %><br>
     <%= f.hidden_field :price %>
   </div>
