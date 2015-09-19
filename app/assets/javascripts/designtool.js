@@ -3,10 +3,10 @@ $(document).ready(function(){
   // SETTING THE PRICE
   var calculatePrice = function(){
     var totalprice = 0;
-    var strandprice = 8 + length;
-    for (var i = 1; i <= 9; i++ ){
+    var strandprice = 12 + length;
+    for (var i = 1; i <= 11; i++ ){
       if (beads[i].removed == false){
-        totalprice+= 3;
+        totalprice+= 2;
       } else {
       }
     };
@@ -24,7 +24,7 @@ $(document).ready(function(){
   var beadPattern = 'solid';
   var beadColor = 'white';
   var quantity = 1;
-  var beadNumber = '5';
+  var beadNumber = '6';
   var beadImageId = '#bead' + beadNumber;
   var beadInputId = '#product_bead' + beadNumber;
 
@@ -35,9 +35,9 @@ $(document).ready(function(){
     var beadPosition = $(this).offset();
     $('.necklace-view').css('text-align', 'left');
     $('.beadSelector').css('color', 'black');
-    $('.beadpicker').show();
+    $('.beadpicker').children().show();
     $('.beadSelector').css('margin-left', (beadPosition.left + $(this).width()/2 - 7) + 'px');
-    beadNumber = $(this).attr('id').slice(-1);
+    beadNumber = $(this).attr('data-beadnumber');
     beadImageId = '#bead' + beadNumber;
     beadInputId = '#product_bead' + beadNumber;
   });
@@ -86,7 +86,7 @@ $(document).ready(function(){
 
   $('.removeBead').click(function(){
     $('.beadSelector').css('color', 'white');
-    $('.beadpicker').hide();
+    $('.beadpicker').children().hide();
     $('.custom-dropdown .dropdown').hide();
     $(beadImageId).hide();
     $(beadInputId).val('');
@@ -129,7 +129,6 @@ $(document).ready(function(){
     var beadRequestFile = '/assets/editor/beads/' + beadRequest + '.png';
     $(beadImageId).attr('src', beadRequestFile);
     $(beadInputId).val(beadRequest);
-    console.log($('#product_bead1').val());
     calculatePrice();
   };
 

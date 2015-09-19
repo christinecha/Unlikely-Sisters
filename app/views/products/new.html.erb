@@ -37,25 +37,26 @@
   <div class="necklace-view">
     <i class="fa fa-chevron-down beadSelector"></i>
     <div class="beads">
-      <%= image_tag "editor/beads/square_white_solid.png", id: "bead1", class: "bead" %>
-      <%= image_tag "editor/beads/square_white_solid.png", id: "bead2", class: "bead" %>
-      <%= image_tag "editor/beads/square_white_solid.png", id: "bead3", class: "bead" %>
-      <%= image_tag "editor/beads/square_white_solid.png", id: "bead4", class: "bead" %>
-      <%= image_tag "editor/beads/square_white_solid.png", id: "bead5", class: "bead" %>
-      <%= image_tag "editor/beads/square_white_solid.png", id: "bead6", class: "bead" %>
-      <%= image_tag "editor/beads/square_white_solid.png", id: "bead7", class: "bead" %>
-      <%= image_tag "editor/beads/square_white_solid.png", id: "bead8", class: "bead" %>
-      <%= image_tag "editor/beads/square_white_solid.png", id: "bead9", class: "bead" %>
+      <%= image_tag "editor/beads/square_white_solid.png", id: "bead1", class: "bead", data: { beadnumber: 1 } %>
+      <%= image_tag "editor/beads/square_white_solid.png", id: "bead2", class: "bead", data: { beadnumber: 2 } %>
+      <%= image_tag "editor/beads/square_white_solid.png", id: "bead3", class: "bead", data: { beadnumber: 3 } %>
+      <%= image_tag "editor/beads/square_white_solid.png", id: "bead4", class: "bead", data: { beadnumber: 4 } %>
+      <%= image_tag "editor/beads/square_white_solid.png", id: "bead5", class: "bead", data: { beadnumber: 5 } %>
+      <%= image_tag "editor/beads/square_white_solid.png", id: "bead6", class: "bead", data: { beadnumber: 6 } %>
+      <%= image_tag "editor/beads/square_white_solid.png", id: "bead7", class: "bead", data: { beadnumber: 7 } %>
+      <%= image_tag "editor/beads/square_white_solid.png", id: "bead8", class: "bead", data: { beadnumber: 8 } %>
+      <%= image_tag "editor/beads/square_white_solid.png", id: "bead9", class: "bead", data: { beadnumber: 9 } %>
+      <%= image_tag "editor/beads/square_white_solid.png", id: "bead10", class: "bead", data: { beadnumber: 10 } %>
+      <%= image_tag "editor/beads/square_white_solid.png", id: "bead11", class: "bead", data: { beadnumber: 11 } %>
     </div>
     <i class="fa fa-chevron-up beadSelector"></i>
   </div>
   <br>
-  <div class=" beadGraveyard">
+  <div class="beadGraveyard">
   </div>
 
   <div class="beadpicker">
     <%= render 'beadpicker' %>
-
     <%= f.hidden_field :bead1, style: "display:none;", value: "square_white_solid" %><br>
     <%= f.hidden_field :bead2, style: "display:none;", value: "square_white_solid" %><br>
     <%= f.hidden_field :bead3, style: "display:none;", value: "square_white_solid" %><br>
@@ -65,6 +66,8 @@
     <%= f.hidden_field :bead7, style: "display:none;", value: "square_white_solid" %><br>
     <%= f.hidden_field :bead8, style: "display:none;", value: "square_white_solid" %><br>
     <%= f.hidden_field :bead9, style: "display:none;", value: "square_white_solid" %><br>
+    <%= f.hidden_field :bead10, style: "display:none;", value: "square_white_solid" %><br>
+    <%= f.hidden_field :bead11, style: "display:none;", value: "square_white_solid" %><br>
     <%= f.hidden_field :strand, style: "display:none;", value: "black & white" %><br>
     <%= f.hidden_field :price %>
   </div>
