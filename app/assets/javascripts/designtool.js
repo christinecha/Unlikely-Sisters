@@ -40,7 +40,13 @@ $(document).ready(function(){
     beadNumber = $(this).attr('data-beadnumber');
     beadImageId = '#bead' + beadNumber;
     beadInputId = '#product_bead' + beadNumber;
+    if ($(window).width() <= 1050){
+      $('.bead').css('height', '60px');
+      $(this).css('height', '100px');
+      $('.beadSelector').hide();
+    };
   });
+
 
   $('.strandPicker .option').click(function(){
     strand = $(this).text();

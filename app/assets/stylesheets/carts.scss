@@ -1,5 +1,4 @@
 .cart--banner {
-  height: 300px;
   background-image: url('textures/squiggles-01.png');
   background-color: #eee;
   background-repeat: repeat;
@@ -25,4 +24,5 @@
   padding: 50px 0;
   text-align: center;
   form { display: inline-block; }
+  height: 300px; 
 }

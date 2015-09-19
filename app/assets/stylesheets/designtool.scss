@@ -115,7 +115,7 @@
   .addBead:hover { opacity: .6; }
 
 
-  @media (max-width:600px) {
+  @media (max-width:1050px) {
     .banner {
       height: 400px;
       padding: 10px 0;
@@ -132,9 +132,11 @@
     .option { min-height: 50px; padding-top: 12px; }
     .quantity { width: 19%; margin-right: 1%; }
     .priceDisplay { width: 70%; }
-    .beads { text-align: left; padding: 0 10px; min-width: 800px; }
+    .necklace-view { background-size: 90%; }
+    .beads { padding: 0 10px; }
+    .bead { height: 50px; }
     .beadSelector { display: none; }
-    .beadpicker { display: none; }
+    .beadpicker { height: 400px; }
   }
 
 }
