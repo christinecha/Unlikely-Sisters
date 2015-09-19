@@ -7,7 +7,10 @@ Rails.application.routes.draw do
   get 'about/makers'
 
   resources :charges
-  resources :products
+  resources :products do
+    post :create
+  end
+
   resources :about
   resources :orders
   resource :cart, only: [:show]
