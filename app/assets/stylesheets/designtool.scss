@@ -3,6 +3,10 @@
   background-position: bottom;
 }
 
+@media (min-width: 1920px){
+  .desk-bkgd { background-size: cover; }
+}
+
 .designtool {
   text-align: center;
   position: relative;
@@ -10,9 +14,9 @@
   .banner {
     // height: 300px;
     // background-image: url('textures/squiggles-01.png');
-    background-size: 50%;
-    background-repeat: repeat;
-    background-position: center;
+    // background-size: 50%;
+    // background-repeat: repeat;
+    // background-position: center;
     // background-color: #FFDC87;
     padding: 40px 0;
     h1 { color: #fff; font-size: 70px; }
@@ -66,7 +70,12 @@
     margin-top: 20px;
   }
 
-  .beads { min-width: 800px; margin: 0; text-align: center; font-size: 8px; }
+  .beads {
+    min-width: 800px;
+    margin: 0;
+    text-align: center;
+    font-size: 8px;
+}
 
   .bead {
     height: 90px;

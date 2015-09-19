@@ -15,6 +15,7 @@ gem 'sass', '~> 3.4.16'
 gem 'bootstrap-sass', '~> 3.3.5'
 gem 'font-awesome-rails'
 gem 'meta-tags'
+gem 'puma'
 
 
 group :development, :test do
