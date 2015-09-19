@@ -4,10 +4,10 @@
     background-image: url('textures/squiggles-01.png');
     background-color: #B8EBFC;
     background-position: center;
-    height: 500px;
+    height: 400px;
     text-align: center;
     .text-block {
-      padding-top: 100px;
+      padding-top: 70px;
       h1 {
         font-family: 'Playfair Display', serif;
         font-size: 35px;
@@ -25,6 +25,12 @@
     text-align: center;
     h1 { margin-bottom: 0; }
     h3 { margin-top: 0; margin-bottom: 50px; }
+    .caption {
+      height: 50px;
+      width: 100%;
+      border: 3px solid black;
+    }
+
   }
 
   @media (max-width: 500px) {

@@ -15,23 +15,20 @@
     <div class="row">
       <div class="col-md-4">
         <%= image_tag('photos/IMG_0121.png') %>
-        <div class="caption">
-          <h4>get inspired</h4>
-        </div>
+        <%= button_to 'GET INSPIRED', 'https://instagram.com/michakajewelry', class: 'bead-it-btn', form: {target: '_blank'} %>
       </div>
       <div class="col-md-4">
         <%= image_tag('photos/IMG_0120.png') %>
-        <div class="caption">
-          <h4>meet the makers</h4>
-        </div>
+        <%= button_to 'MEET THE MAKERS', about_makers_path, class: 'bead-it-btn' %>
       </div>
       <div class="col-md-4">
         <%= image_tag('photos/IMG_0123.png') %>
-        <div class="caption">
-          <h4><%= link_to 'bead your own', new_product_path %></h4>
-        </div>
+        <%= button_to 'BEAD YOUR OWN', new_product_path, class: 'bead-it-btn' %>
       </div>
     </div>
+    <br>
+    <hr>
+    <br>
     <%= image_tag('graphics/heart_100x100.gif') %>
     <h3>&#35;michaka</h3>
   </div>
