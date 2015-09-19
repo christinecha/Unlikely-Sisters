@@ -1,0 +1,33 @@
+.designtool--guide {
+
+  .label {
+    background-color: rgba(255,255,255,.8);
+    position: absolute;
+    z-index: 100;
+    display: none;
+    color: #000;
+    padding: 0 10px;
+    h4 { font-size: 14px; }
+  }
+
+  .guide-nav {
+    top: 80%;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .next, .skip {
+    display: inline-block;
+    border: 2px solid black;
+    padding: 20px;
+    height: 70px;
+  }
+
+  .next { font-size: 25px; }
+  .skip { font-size: 27px; }
+  .next:hover, .skip:hover { color: #fff; background-color: #000; }
+
+
+
+
+}

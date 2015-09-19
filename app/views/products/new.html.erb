@@ -1,9 +1,11 @@
+<%= render 'designtoolguide' %>
+
 <div class="designtool">
   <%= form_for(@product) do |f| %>
 
   <div class="banner">
     <h1><span class="sniglet">beAd</span><span class="waiting-for-the-sunrise">StAtiON</span></h1>
-    <%= f.text_field :name, placeholder: "name it, yo", class: "necklaceNamer" %>
+    <%= f.text_field :name, placeholder: "name your design", class: "necklaceNamer" %>
 
     <div class="custom-dropdown strandPicker">
       <div class="selector">
@@ -83,6 +85,7 @@
     </div>
   <% end %>
 
-
+  <div class="banner" style="height:100px;">
+  </div>
 
 </div>

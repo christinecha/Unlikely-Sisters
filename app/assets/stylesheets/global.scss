@@ -68,6 +68,7 @@ input { padding: 0 20px; }
     cursor: pointer;
   }
   .option { margin: 5px; cursor: pointer; }
+  .option:hover { background-color: #000; color: #fff; }
 }
 
 .btn {

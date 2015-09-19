@@ -5,9 +5,9 @@
   background-color: white;
   border-radius: 0 !important;
   box-shadow: none !important;
-  border: none !important;
+  border: 2px solid #F6B !important;
   background-image: linear-gradient(white, white) !important;
-  color: black !important ;
+  color: black;
   font-family: 'Playfair Display', serif;
   font-size: 20px;
   font-weight: 400;
@@ -20,7 +20,8 @@
 .stripe-button-el:hover {
   font-family: 'sniglet', sans-serif;
   font-weight: 800;
-  font-size:25px;
+  color: #F6B;
+  font-size: 25px;
 }
 
 .bodyView {
