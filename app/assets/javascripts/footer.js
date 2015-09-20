@@ -4,12 +4,8 @@ $(document).ready(function(){
 
   if ($('body').height() < $(window).height()){
     $('.footer').css('top', footerPos);
-    console.log($('body').height());
-    console.log($(window).height());
   } else {
     $('.footer').css('top', '');
-    console.log($('body').height());
-    console.log($(window).height());
   };
 
   // var resizeId;

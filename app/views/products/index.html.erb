@@ -15,15 +15,15 @@
     <div class="row">
       <div class="col-md-4">
         <%= image_tag('photos/IMG_0121.png') %>
-        <%= button_to 'GET INSPIRED', 'https://instagram.com/michakajewelry', class: 'bead-it-btn', form: {target: '_blank'} %>
+        <%= button_to 'GET INSPIRED', 'https://instagram.com/michakajewelry', class: 'bead-it-btn', form: {target: '_blank', method: 'GET'} %>
       </div>
       <div class="col-md-4">
         <%= image_tag('photos/IMG_0120.png') %>
-        <%= button_to 'MEET THE MAKERS', about_makers_path, class: 'bead-it-btn' %>
+        <%= button_to 'MEET THE MAKERS','/about/makers', class: 'bead-it-btn', form: {method: 'GET'} %>
       </div>
       <div class="col-md-4">
         <%= image_tag('photos/IMG_0123.png') %>
-        <%= button_to 'BEAD YOUR OWN', new_product_path, class: 'bead-it-btn' %>
+        <%= button_to 'BEAD YOUR OWN', new_product_path, method: 'GET', class: 'bead-it-btn' %>
       </div>
     </div>
     <br>

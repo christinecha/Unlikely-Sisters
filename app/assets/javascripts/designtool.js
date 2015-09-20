@@ -10,10 +10,11 @@ $(document).ready(function(){
       } else {
       }
     };
-    totalprice+= strandprice;
-    totalprice*= quantity;
-    $('#product_price').val(totalprice);
+    unitprice = totalprice + strandprice;
+    totalprice = quantity * unitprice;
+    $('#product_price').val(unitprice);
     $('.priceDisplay').val('TOTAL PRICE: $' + totalprice + '.00');
+    console.log(unitprice);
     console.log(totalprice);
   };
 
