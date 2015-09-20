@@ -11,9 +11,14 @@
   .navbar-right > li { float: right; margin-right: 20px; }
 }
 
+@media (min-width: 768px){
+  .footer {
+    .navbar, .navbar-default, { float: none !important; }
+  }
+}
+
 @media (max-width: 1050px){
   .footer {
-    .navbar-nav { text-align: center; }
     .navbar-left > li { float: none; }
     .navbar-right > li { float: none; }
   }
