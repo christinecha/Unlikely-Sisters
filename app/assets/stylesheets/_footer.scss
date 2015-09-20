@@ -4,14 +4,14 @@
   padding: 20px;
   border-radius: 0;
   position: absolute;
-  width: 100%; 
+  width: 100%;
 
   .navbar-nav > li > a { padding: 10px 20px; color: #fff; }
   .navbar-nav > li > a:hover { color: #000; background-color: #fff; }
   .navbar-right > li { float: right; margin-right: 20px; }
 }
 
-@media (max-width: 500px){
+@media (max-width: 1050px){
   .footer {
     .navbar-nav { text-align: center; }
     .navbar-left > li { float: none; }

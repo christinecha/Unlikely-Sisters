@@ -2,7 +2,7 @@ $(document).ready(function(){
 
   var footerPos = $(window).height() - $('.footer').height();
 
-  if ($('body').height() < $(window).height()){
+  if (($('body').height() + $('.footer').height()) < $(window).height()){
     $('.footer').css('top', footerPos);
   } else {
     $('.footer').css('top', '');
