@@ -1,6 +1,5 @@
 class ChargesController < ApplicationController
   protect_from_forgery :except => :webhook
-  before_save :update_order_status
 
   def new
   end
