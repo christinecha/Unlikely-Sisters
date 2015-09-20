@@ -84,7 +84,7 @@
   }
 
   .beadpicker {
-    height: 260px;
+    height: 270px;
     text-align: center;
     .beadOptions {
       i { font-size: 30px; }
@@ -101,7 +101,12 @@
     }
   }
 
-  .removeBead { cursor: pointer; }
+  .removeBead {
+    cursor: pointer;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100px;
+  }
   .removeBead:hover { color: #ff9900; }
 
   .addBead {
@@ -117,7 +122,6 @@
 
   @media (max-width:1050px) {
     .banner {
-      height: 400px;
       padding: 10px 0;
       h1 { font-size: 50px; }
     }

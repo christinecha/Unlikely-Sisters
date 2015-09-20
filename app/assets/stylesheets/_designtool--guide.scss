@@ -27,7 +27,9 @@
   .skip { font-size: 27px; }
   .next:hover, .skip:hover { color: #fff; background-color: #000; }
 
-
+  @media (max-width: 1050px) {
+    .label { display: none !important; }
+  }
 
 
 }

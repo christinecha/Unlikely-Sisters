@@ -8,8 +8,12 @@ class Order < ActiveRecord::Base
     order_items.collect { |oi| oi.valid? ? (oi.quantity * oi.unit_price) : 0 }.sum
   end
 
-  def subtotal_cents
-    subtotal * 100
+  def total_with_shipping
+    subtotal + 5
+  end
+
+  def total_cents
+    total_with_shipping * 100
   end
 
 

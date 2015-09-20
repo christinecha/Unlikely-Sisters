@@ -47,6 +47,11 @@ $(document).ready(function(){
     $('.labels--price').hide();
   });
 
+  $('.removeBead').click(function(){
+    var position = $(this).offset();
+    $('.labels--removeBead').css('margin-top', position.top + 3);
+    $('.labels--removeBead').css('margin-left', position.left + $(this).width()/2 - $('.labels--removeBead').width()/2);
+  });
 
 
 

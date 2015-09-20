@@ -92,27 +92,33 @@ $(document).ready(function(){
   });
 
   $('.removeBead').click(function(){
-    $('.beadSelector').hide();
-    $('.beadOptions').hide();
-    $('.custom-dropdown .dropdown').hide();
-    $(beadImageId).hide();
-    $(beadInputId).val('');
-    beads[beadNumber].removed = true;
-    $('.beadGraveyard').append(
-      '<button class="addBead" value="' + beadNumber + '">'
-      +
-      '<image height="60px" src="/assets/editor/beads/' + beads[beadNumber].shape + '_' + beads[beadNumber].color + '_' + beads[beadNumber].pattern + '.png" >'
-      +
-      '<p>ADD ME BACK</p>'
-      +
-      '</button> '
-    );
-    calculatePrice();
+    console.log($('.beadGraveyard').children('.addBead').length);
+    if ($('.beadGraveyard').children('.addBead').length <=9){
+      $('.beadSelector').hide();
+      $('.beadOptions').hide();
+      $('.custom-dropdown .dropdown').hide();
+      $(beadImageId).hide();
+      $(beadInputId).val('');
+      beads[beadNumber].removed = true;
+      $('.beadGraveyard').append(
+        '<button class="addBead" value="' + beadNumber + '">'
+        +
+        '<image height="60px" src="/assets/editor/beads/' + beads[beadNumber].shape + '_' + beads[beadNumber].color + '_' + beads[beadNumber].pattern + '.png" >'
+        +
+        '<p>ADD ME BACK</p>'
+        +
+        '</button> '
+      );
+      calculatePrice();
+    } else {
+      $('.labels--removeBead').show();
+    }
   });
 
   $('.beadGraveyard').on('click', '.addBead', function(){
     beadNumber = $(this).val();
     $(this).remove();
+    $('.labels--removeBead').hide();
     beads[beadNumber].removed = false;
     beadImageId = '#bead' + beadNumber;
     beadInputId = '#product_bead' + beadNumber;

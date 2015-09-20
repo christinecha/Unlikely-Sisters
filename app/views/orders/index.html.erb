@@ -2,10 +2,26 @@
 
   <div>
     <h1>placed order # <%= order.id %> </h1>
-    <% @orderitems.where(:order_id => order.id).each do |orderitem| %>
-    <p> <%= orderitem.id %> </p>
-    <% end %>
 
+    <% @orderitems.where(:order_id => order.id).each do |orderitem| %>
+      <h2> <%= orderitem.id %> x <%= orderitem.quantity %></h2>
+
+      <% @products.where(:id => orderitem.product_id).each do |product| %>
+        <p> <%= product.id %> </p>
+        <p> <%= product.bead1 %> </p>
+        <p> <%= product.bead2 %> </p>
+        <p> <%= product.bead3 %> </p>
+        <p> <%= product.bead4 %> </p>
+        <p> <%= product.bead5 %> </p>
+        <p> <%= product.bead6 %> </p>
+        <p> <%= product.bead7 %> </p>
+        <p> <%= product.bead8 %> </p>
+        <p> <%= product.bead9 %> </p>
+        <p> <%= product.bead10 %> </p>
+        <p> <%= product.bead11 %> </p>
+      <% end %>
+
+    <% end %>
   </div>
 
 <% end %>
